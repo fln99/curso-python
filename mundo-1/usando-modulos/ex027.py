@@ -1,4 +1,4 @@
-nome_completo = input('Insira seu nome completo: ')
+nome_completo = input('Insira seu nome completo: ').strip()
 
 slice_nome = nome_completo.split()
 
