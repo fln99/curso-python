@@ -5,14 +5,12 @@ Ex: APOS A SOPA = APOS A SOPA
     A TORRE DA DERROTA
     A SACADA DA CASA
 ''')
-frase = (str(input('Insira a frase: ')).strip()).replace(' ', '')
 
-size = len(frase)
+frase = (str(input('Insira a frase: ')).strip()).replace(' ', '').upper()
 
-for i in range(size):
-    # print(frase[i])
-    if frase[0] == frase[-1]:
-        print(frase[0], frase[-1])
+inverso = frase[::-1]
 
-        if frase[i] == frase[-(i + 1)]:
-            print(frase[i], frase[(- i + 1)])
+if inverso == frase:
+    print('Temos um palíndromo!')
+else:
+    print('A frase digitada não é um palíndromo!')
