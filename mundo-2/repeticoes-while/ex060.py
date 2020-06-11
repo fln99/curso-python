@@ -1,12 +1,15 @@
 print('Calcule o fatorial de um número abaixo:')
 num = int(input('Insira um número inteiro: '))
 
-controle = num + 1
-m = 1
+c = num
+f = 1
 
-while controle != 1:
-    controle -= 1
-    m = m * controle
-    print(controle)
+print('Calculando {}! = '.format(num), end='')
 
-print('O fatorial de {} é {}!'.format(num, m))
+while c > 0:
+    print('{}'.format(c), end='')
+    print(' x ' if c > 1 else ' = ', end='')
+    f *= c
+    c -= 1
+
+print('{}'.format(f))

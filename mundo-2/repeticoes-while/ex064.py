@@ -1,12 +1,10 @@
-n = 0
-soma = 0
-quant = 0
+n = soma = cont = 0
+n = int(input('Insira um número inteiro: '))
+
 while n != 999:
+    soma += n
+    cont += 1
     n = int(input('Insira um número inteiro: '))
-    if n == 999:
-        soma = soma + 0
-    else:
-        soma = soma + n
-        quant = quant + 1
+
 print('A soma dos números inseridos é {}!'.format(soma))
-print('Foram inseridos {} números!'.format(quant))
+print('Foram inseridos {} números!'.format(cont))

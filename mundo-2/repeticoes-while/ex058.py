@@ -7,11 +7,19 @@ print('{:^32}'.format(' Jogue um número de 0 a 10 '))
 
 palpites = 0
 
-while True:
+acertou = False
+
+while not acertou:
     jogador = int(input('Número aqui: '))
     palpites += 1
 
     if jogador == computador:
-        print('Parabéns, você venceu!')
+        acertou = True
+        print('Parabéns, você acertou!')
         print('Sua jogada teve {} palpites.'.format(palpites))
-        break
+
+    else:
+        if jogador < computador:
+            print('Mais... Tente denovo.')
+        else:
+            print('Menos... Tente denovo.')
