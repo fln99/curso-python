@@ -1,6 +1,9 @@
 print('Sequência de Fibonacci')
 
-n = int(input('Insira um número inteiro: '))
+n = int(input('Tamanho da sequência: '))
 
-while True:
-    print(n, n + 1)
+c = 0
+
+while c != n:
+    print(c)    
+    c += 1
