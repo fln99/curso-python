@@ -1,37 +1,39 @@
-from random import randint
-from time import sleep
-print('<-=-> ' * 10)
-print('{:^59}'.format('Jogo do Par ou Ímpar'))
-print('{:^59}'.format('Vença a I.A!'))
-print('<-=-> ' * 10)
+from random import choice, randint
 
-c = h = 0
+resultado = ''
 
-while c != 5 or h != 5:
-    pc_rand = randint(1, 10)
+h = 0
 
-    h_int = int(input('Escolha um número entre 0 a 10: '))
-    h_tipo = str(input('Faça sua escolha: [Par/Impar] ')).strip().upper()[0]
+while True:
+    computador = randint(1, 10)
+    escolha_pc = choice(['P', 'I'])
 
-    print('-' * 10)
+    print('-' * 30)
 
-    print(f'Você jogou {h_int} e definiu final de jogo como {h_tipo}')
+    humano = int(input('Escolha um número entre 1 e 10: '))
+    escolha_h = str(input('Par ou Impar? [P/I] ')).strip().upper()[0]
 
-    print('Jogada da I.A...')
-
-    sleep(2)
-
-    if pc_rand % 2 == 0:
-        if h_int % 2 != 0:
-            print('Você perdeu! O computador escolheu PAR')
-            c += 1
-        else:
-            print('Empate! Você e o computador jogaram PAR')
-    else:
-        if h_int % 2 == 0:
-            print('Você venceu! O computador escolheu IMPAR')
+    total = computador + humano
+    
+    if total % 2 == 0:
+        # Se o total dos números jogados for PAR
+        resultado = 'P'
+        print('O resultado da jogada foi PAR!')
+        if escolha_h == resultado:
+            print('Você venceu!')
             h += 1
         else:
-            print('Empate! Você e o computador jogaram IMPAR')
+            print('Você perdeu.')
+            break
+    else:
+        # Se o total dos números jogados for IMPAR
+        resultado = 'I'
+        print('O resultado da jogada foi IMPAR!')
+        if escolha_h == resultado:
+            print('Você venceu!')
+            h += 1
+        else:
+            print('Você perdeu.')
+            break
 
-print(f'O computador venceu {c} vezes e você {h}!')
+print(f'Total de jogadas ganhas: {h}')
