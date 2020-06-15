@@ -1,39 +1,34 @@
-from random import choice, randint
+from random import randint
 
-resultado = ''
-
-h = 0
+v = 0
 
 while True:
-    computador = randint(1, 10)
-    escolha_pc = choice(['P', 'I'])
+    jogador = int(input('Diga um valor: '))
+    computador = randint(0, 11)
+    total = jogador + computador
+    tipo = ' '
 
-    print('-' * 30)
+    while tipo not in 'PI':
+        tipo = str(input('Par ou Ímpar? [P/I] ')).strip().upper()[0]
 
-    humano = int(input('Escolha um número entre 1 e 10: '))
-    escolha_h = str(input('Par ou Impar? [P/I] ')).strip().upper()[0]
+    print(f'Você jogou {jogador} e o computador {computador}. Total de {total}', end=' => ')
+    print('DEU PAR' if total % 2 == 0 else 'DEU ÍMPAR')
 
-    total = computador + humano
-    
-    if total % 2 == 0:
-        # Se o total dos números jogados for PAR
-        resultado = 'P'
-        print('O resultado da jogada foi PAR!')
-        if escolha_h == resultado:
-            print('Você venceu!')
-            h += 1
+    if tipo == 'P':
+        if total % 2 == 0:
+            print('Você ganhou!')
+            v += 1
         else:
-            print('Você perdeu.')
-            break
-    else:
-        # Se o total dos números jogados for IMPAR
-        resultado = 'I'
-        print('O resultado da jogada foi IMPAR!')
-        if escolha_h == resultado:
-            print('Você venceu!')
-            h += 1
-        else:
-            print('Você perdeu.')
+            print('Você perdeu :(')
             break
 
-print(f'Total de jogadas ganhas: {h}')
+    elif tipo == 'I':
+        if total % 2 == 1:
+            print('Você venceu :D')
+            v += 1
+        else:
+            print('Você perdeu!')
+            break
+        
+    print('Vamos jogar novamente!')
+print(f'GAME OVER! Você venceu {v} vezes')
