@@ -1,4 +1,4 @@
-lista = list()
+lista = []
 
 while True:
     numero = int(input('Insira um número: '))
@@ -9,4 +9,5 @@ while True:
         break
 
 print(f'Foram inseridos {len(lista)} números na lista!')
-print(f'Valores em ordem decrescente: {lista.sort(reverse=True)}')
+print(f'Valores em ordem decrescente: {list(reversed(lista))}')
+print(f'O valor 5 se encontra na lista!' if 5 in lista else 'O número 5 não foi encontrado na lista!')
