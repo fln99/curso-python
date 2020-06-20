@@ -1,25 +1,19 @@
-lista_numeros = []
+lista = list()
 
-cont = 0
+for c in range(0, 5):
+    numero = int(input('Digite um valor: '))
 
-while True:
-    cont += 1
-    numero = int(input('Insira um número inteiro: '))
+    if c == 0 or numero > lista[-1]:
+        lista.append(numero)
+        print('Adicionado ao final da lista...')
+    else:
+        pos = 0
+        while pos < len(lista):
+            if numero <= lista[pos]:
+                lista.insert(pos, numero)
+                print(f'Adicionado na posição {pos} da lista...')
+                break
+            pos += 1
 
-    if numero not in lista_numeros:
-        lista_numeros.append(numero)
-        index = lista_numeros.index(numero)
-        print('Valor adicionado à ultima posição da lista!')
-
-        if numero > lista_numeros[index]:
-            print('Valor adicionado à ultima posição!')
-    
-    if cont == 3:
-        continuar = str(input('Deseja continuar? '))
-
-        if continuar in 'Nn':
-            break
-        else:
-            cont = 0
-    
-print(lista_numeros)
+print('=-' * 25)
+print(f'Os valores digitados em ordem foram: {lista}')

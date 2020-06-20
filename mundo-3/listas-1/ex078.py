@@ -1,23 +1,26 @@
+listanum = list()
 
-lista = list()
+maior = menor = 0
 
-while True:
-    lista.append(int(input('Insira um número inteiro: ')))
-    print(lista)
+for c in range(0, 5):
+    listanum.append(int(input(f'Digite um número para a posição {c}: ')))
+    if c == 0:
+        maior = menor = listanum[c]
+    else:
+        if listanum[c] > maior:
+            maior = listanum[c]
+        if listanum[c] < menor:
+            menor = listanum[c]
 
-    escolha = str(input('Deseja continuar? [S/N] ')).strip().upper()
-
-    if escolha in 'Nn':
-        break
-
-cont = 0
-
-quantos_maiores_iguais = lista.count(max(lista))
-indice_do_primeiro = lista.index(max(lista))
-
-while cont <= quantos_maiores_iguais:
-    print(lista.index(max(lista), cont))
-    cont += 1
-
-# print(f'O maior valor da lista é {max(lista)} e se encontra na posição {lista.index(max(lista))}!')
-# print(f'O menor valor da lista é {min(lista)} e se encontra na posição {lista.index(min(lista))}!')
+print('=-' * 30)
+print(f'Você digitou os valores: {listanum}')
+print(f'O maior valor é {maior} e se encontra nas posições ', end='')
+for i, v in enumerate(listanum):
+    if v == maior:
+        print(f'{i}... ', end='')
+print()
+print(f'O menor valor é {menor} e está nas posições ', end='')
+for i, v in enumerate(listanum):
+    if v == menor:
+        print(f'{i}... ', end='')
+print()

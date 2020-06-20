@@ -5,7 +5,6 @@ lista_impar = []
 while True:
     numero = int(input('Insira um número: '))
     lista.append(numero)
-
     if numero % 2 == 0:
         lista_par.append(numero)
     else:

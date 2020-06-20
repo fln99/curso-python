@@ -1,8 +1,7 @@
 lista = []
 
 while True:
-    numero = int(input('Insira um número: '))
-    lista.append(numero)
+    lista.append(int(input('Insira um número: ')))
 
     continuar = str(input('Deseja continuar? [S/N] '))
     if continuar in 'Nn':
