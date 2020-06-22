@@ -27,7 +27,7 @@ for c in pessoas:
 for c in pessoas:
     if c[1] == maior:
         maior_peso.append(c[0])
-    else:
+    elif c[1] == menor:
         menor_peso.append(c[0])
 
 print(f'Foram cadastradas {len(pessoas)} pessoas na lista!')
