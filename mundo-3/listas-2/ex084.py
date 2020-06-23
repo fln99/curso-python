@@ -1,10 +1,17 @@
 pessoas = list()
 pessoa = list()
+maior = menor = 0
 
 while True:
     pessoa.append(str(input('Informe seu nome: ')).strip().capitalize())
     pessoa.append(float(input('Informe seu peso: ')))
-
+    if len(pessoas) == 0:
+        maior = menor = pessoa[1]
+    else:
+        if pessoa[1] > maior:
+            maior = pessoa[1]
+        if pessoa[1] < menor:
+            menor = pessoa[1]
     pessoas.append(pessoa[:])
     pessoa.clear()
 
@@ -12,24 +19,14 @@ while True:
     if continuar in 'Nn':
         break
 
-maior = menor = 0
-maior_peso = list()
-menor_peso = list()
-
-for c in pessoas:
-    if c == 0:
-        maior = menor = 0
-    if c[1] > maior:
-        maior = c[1]
-    else:
-        menor = c[1]
-
-for c in pessoas:
-    if c[1] == maior:
-        maior_peso.append(c[0])
-    elif c[1] == menor:
-        menor_peso.append(c[0])
-
 print(f'Foram cadastradas {len(pessoas)} pessoas na lista!')
-print(f'As pessoas com {maior} são: {maior_peso}')
-print(f'As pessoas com {menor} são: {menor_peso}')
+print(f'As pessoas com {maior} são: ', end='')
+for p in pessoas:
+    if p[1] == maior:
+        print(f'[{p[0]}] ', end='')
+print()
+print(f'As pessoas com {menor} são: ', end='')
+for p in pessoas:
+    if p[1] == menor:
+        print(f'[{p[0]}] ', end='')
+print()
