@@ -10,7 +10,7 @@ for c in range(0, partidas):
     soma_gols += gols
     lista_gols.append(gols)
 
-jogador['gols'] = lista_gols
+jogador['gols'] = lista_gols[:]
 jogador['total'] = soma_gols
 
 print('=-' * 28)
