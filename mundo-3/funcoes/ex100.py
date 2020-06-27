@@ -1,20 +1,23 @@
 from random import randint
-numeros = []
-pares = []
+from time import sleep
 
-def sorteia():
-    for i in range(0, 5):
-        numeros.append(randint(0, 60))
+def sorteia(lis):
+    print('Sorteio de 5 números da lista: ', end='')
+    for c in range(0, 5):
+        n = randint(1, 10)
+        lis.append(n)
+        print(f'{n} ', end='', flush=True)
+        sleep(0.3)
+    print('Finalizado!')
 
 
-sorteia()
 def soma_par(lis):
-    for num in lis:
-        if num % 2 == 0:
-            pares.append(num)
+    soma = 0
+    for n in lis:
+        if n % 2 == 0:
+            soma += n
+    print(f'Somando todos os valores pares em {lis} teremos {soma}')
 
-
+numeros = list()
+sorteia(numeros)
 soma_par(numeros)
-
-print(numeros)
-print(f'A soma dos números pares da lista é {sum(pares)}')
