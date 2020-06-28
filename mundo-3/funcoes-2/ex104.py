@@ -1,8 +1,9 @@
 def leiaInt(item):
-    if item.isnumeric:
-        return int(input(item))
+    num = int(input(item))
+    if num == 0 or num == '':
+        return 'ERRO'
     else:
-        print('Erro - Digite um número válido!')
+        return num
 
 
 # Programa principal
