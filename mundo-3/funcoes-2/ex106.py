@@ -1,6 +1,25 @@
-def
+from time import sleep
+
+def ajuda(comm):
+    help(comm)
 
 
-# principal
+def título(msg, color=0):
+    tam = len(msg)
+    print('-' * tam)
+    print(msg)
+    print('-' * tam)
+    sleep(1)
 
-question = str(input('Função a ser tiradas as dúvidas: '))
+# Programa Principal
+comando = ''
+while True:
+    título('Sistema de Ajuda - Interactive Help')
+    comando = str(input('Função ou Biblioteca: '))
+    if comando.upper() == 'FIM':
+        break
+    else:
+        ajuda(comando)
+título('Programa Encerrado')
+
+# OBS: Desafio feito pelo VSCODE, o terminal não aceitou cores.

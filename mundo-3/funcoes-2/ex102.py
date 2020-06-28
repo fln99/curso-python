@@ -1,23 +1,23 @@
-def fatorial(n, s = False):
+def fatorial(n, show=False):
     """
     Calcula o fatorial de um número.
     Sobre os parametros:
-    n - Numero que sera o fatorial.
-    s - Mostra o processo de fatoracao.
+    :param n: Numero que sera o fatorial.
+    :param show: (opcional) Mostra o processo de fatoracao.
+    :return: Retorna o valor do fatorial.
     """
     fator = 1
-    if s == True:
-        for c in range(n, 0, -1):
-            fator *= c
-            if s == True:
-                print(c, end=' ')
-        print('=', fator)
-    else:
-        for c in range(n, 0, -1):
-            fator *= c
-        print(fator)
+    for c in range(n, 0, -1):
+        if show:
+            print(c, end='')
+            if c > 1:
+                print(' x ', end='')
+            else:
+                print(' = ', end='')
+        fator *= c
+    return fator
 
+# Programa Principal
 print('-=' * 20)
-fatorial(5, True)
-fatorial(5)
+print(fatorial(5, True))
 # help(fatorial)
