@@ -1,4 +1,4 @@
-def aumentar(valor, form=False, qtd=0.15):
+def aumentar(valor = 0, form=False, qtd=0.15):
     """
     -> Função que concede um aumento de 15% de um salário/valor.
     :param valor: valor do capital a ser aumentado
@@ -11,7 +11,7 @@ def aumentar(valor, form=False, qtd=0.15):
         return valor + (valor * qtd)
 
 
-def diminuir(valor, form=False, qtd=0.30):
+def diminuir(valor = 0, form=False, qtd=0.30):
     """
     -> Função que diminui o valor em 30%.
     :param valor: total a ser modificado
@@ -24,7 +24,7 @@ def diminuir(valor, form=False, qtd=0.30):
         return valor - (valor * qtd)
 
 
-def dobro(valor, form=False):
+def dobro(valor = 0, form=False):
     """
     -> Função para dobrar o valor de um número.
     :param valor: número a ser dobrado
@@ -37,7 +37,7 @@ def dobro(valor, form=False):
         return valor * 2
 
 
-def metade(valor, form=False):
+def metade(valor = 0, form=False):
     """
     -> Função que dividirá o valor na metade.
     :param valor: valor a ser dividido
@@ -50,13 +50,13 @@ def metade(valor, form=False):
         return valor / 2
 
 
-def moeda(valor):
+def moeda(valor = 0):
     """
     -> Função para converter monetariamente.
     :param valor: valor a ser convertido
     :return: retorna o valor convertido
     """
-    return f'R${valor}'
+    return f'R${valor:.2f}'.replace('.', ',')
 
 
 def resumo(valor, aum, dim):
