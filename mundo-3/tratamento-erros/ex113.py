@@ -14,12 +14,13 @@ def common_code(tipoInt, txt):
         except Exception as error:
             print('ERRO! o_o`')
             print(f'Tipo do erro: {error.__class__}')
+            continue
         except KeyboardInterrupt:
             print('ERRO! x..x')
-            print('O usuário encerrou a execução do programa.')
-        else:
-            break
-    return n
+            print('O usuário interrompeu a entrada de dados.')
+            return 0
+        else:   
+            return n
 
 
 def leiaInt(msg):
